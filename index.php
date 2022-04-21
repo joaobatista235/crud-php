@@ -22,7 +22,7 @@
                 <input class="input" type="password" placeholder="senha" autocomplete="off" name="password" />
                 <span class="input-border"></span>
                 <button class="submit">Concluir</button>
-                <a class="usr" href="addCliente.php">Visualizar cadastros</a>
+                <a class="usr" href="users.php">Visualizar cadastros</a>
             </form>
         </div>
     </main>

@@ -19,7 +19,7 @@ class Cliente{
     }
 
     public function setId($id){
-        $this->nome = $id;
+        $this->id = $id;
     }
     public function setNome($nome){
         $this->nome = $nome;
@@ -43,7 +43,43 @@ class Cliente{
         }
     }
 
+    public function fetchAll(){
+        try{
+            $sql = $this->db->prepare("SELECT * FROM Clientes");
+            $sql->execute();
+            return $sql->fetchAll();
+        }catch(Exception $e){
+            return $e->getMessage();
+        }
+    }
+
+    public function fetchOne(){
+        try{
+            $sql = $this->db->prepare("SELECT * FROM Clientes WHERE ClienteId=?");
+            $sql->execute([$this->id]);
+            return $sql->fetchAll();
+        }catch(Exception $e){
+            return $e->getMessage();
+        }
+    }
+
+    public function delete(){
+        try{
+            $sql = $this->db->prepare("DELETE FROM Clientes WHERE ClienteId=?");
+            $sql->execute([$this->id]);
+            return $sql->fetchAll();
+        }catch(Exception $e){
+            return $e->getMessage();
+        }
+    }
+
+    public function update(){
+        try{
+            $sql = $this->db->prepare("UPDATE Clientes SET ClienteNome = ?, ClienteCpf = ?, ClienteEmail = ?, ClienteSenha = ?");
+            $sql->execute([$this->nome,$this->cpf,$this->email,$this->senha]);
+        }catch(Exception $e){
+            return $e->getMessage();
+        }
+    }
+
 }
-
-
-?>

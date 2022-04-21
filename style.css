@@ -1,6 +1,5 @@
 :root {
     --input-linear: linear-gradient(120deg, #201c1c, #6e046ecc);
-    --input-error: red;
     --button-linear: linear-gradient(120deg, #201c1c, #6e046ecc, #201c1c);
     --white: #fff;
     --black: #303030;
@@ -25,7 +24,7 @@
   
   .container {
     min-height: 400px;
-    width: 300px;
+    min-width: 300px;
     background-color: var(--white);
     box-sizing: border-box;
     padding: 32px;
@@ -105,4 +104,11 @@
     font-size: 14px;
     color: var(--black);
     text-decoration: none;
+  }
+
+  .table{
+  }
+  .table-title{
+  }
+  .table-data{
   }
